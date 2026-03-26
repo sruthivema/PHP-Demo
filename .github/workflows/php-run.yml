@@ -79,6 +79,14 @@ jobs:
           mkdir -p build
           echo "Build version: $(date)" > build/version.txt
           cp index.php build/
+
+      
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: php-build
+          path: build/
+
           
            
   push-to-repo:
