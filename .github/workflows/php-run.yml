@@ -10,9 +10,21 @@ jobs:
   unit-test:
     name: PHP Unit Test
     runs-on: ubuntu-latest
-    steps:
-       - name: PHP Unit Test
-         run: echo "Unit Test Completed"
+    
+    steps:  
+          - name: Setup PHP
+            uses: shivammathur/setup-php@v2
+            with:
+              php-version: '8.2'
+              extensions: mbstring
+              coverage: none
+    
+          - name: Install composer dependencies
+            run: composer install --prefer-dist --no-progress --no-suggest
+    
+          - name: Run PHPUnit tests
+            run: vendor/bin/phpunit
+
          
   sonar-quality-check:
     name: Sonar Quality Check
