@@ -1,4 +1,8 @@
 <?php
-// index.php
-echo "Hello, Welcome to my PHP Application!";
-?>
+
+function home(): string
+{
+    return "Hello World";
+}
+
+echo home();
