@@ -71,15 +71,15 @@ jobs:
     runs-on: ubuntu-latest
     needs: code-security-check
     steps:
-
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
       - name: Build Application
         run: |
           mkdir -p build
           echo "Build version: $(date)" > build/version.txt
-          cp ./index.php build/
-      
-             
-
+          cp index.php build/
+           
   push-to-repo:
     name: Push to Repository 
     runs-on: ubuntu-latest
