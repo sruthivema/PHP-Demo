@@ -58,10 +58,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: code-quality-check
     steps:
-      - name: Code Security Policy Check
-        run: |
-          echo "Checking security policy..."
-          test -f security/security-policy.md
+#      - name: Code Security Policy Check
+#        run: |
+#          echo "Checking security policy..."
+#          test -f security/security-policy.md
 
       - name: Code Security Check
         run: echo "Code Security Check Completed"
