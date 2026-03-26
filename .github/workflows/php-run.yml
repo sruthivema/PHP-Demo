@@ -79,6 +79,7 @@ jobs:
           mkdir -p build
           echo "Build version: $(date)" > build/version.txt
           cp index.php build/
+          
            
   push-to-repo:
     name: Push to Repository 
