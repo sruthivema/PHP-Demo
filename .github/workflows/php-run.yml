@@ -80,26 +80,12 @@ jobs:
           # 1. Get current time and build number
           TIMESTAMP=$(date +'%Y-%m-%d %H:%M:%S')
           BUILD_NUM=${{ github.run_number }}
-          
           # 2. Create the folder
           mkdir -p build_outputs
-          
           # 3. Save info to the file
           echo "Build Number: $BUILD_NUM" > build_outputs/build_info.txt
           echo "Timestamp: $TIMESTAMP" >> build_outputs/build_info.txt
           echo "Generated log for build #$BUILD_NUM"
- 
-      - name: Commit and Push to Branch
-        run: |
-          # Configure Git to identify as GitHub Actions Bot
-          git config --global user.name "soumikpal49"
-          #git config --global user.email "soumikpal49@gmail.com"
-          # Stage the new folder/file
-          git add build_outputs/
-          # Only commit if there are changes (prevents errors if file is identical)
-          git commit -m "docs: record build #${{ github.run_number }} info" || exit 0
-          # Push back to the main branch
-          git push
 
           
            
