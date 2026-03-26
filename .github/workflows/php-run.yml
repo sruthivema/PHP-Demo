@@ -78,7 +78,7 @@ jobs:
       - name: Build Application
         run: |
            mkdir -p build
-           echo "Build version: $(date)" > build/version.txt
+           echo "Build version: $(date)"
            cp index.php build/
 
   
